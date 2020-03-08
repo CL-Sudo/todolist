@@ -1,0 +1,22 @@
+{
+    "plugins": [
+      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+      [
+          "babel-plugin-module-resolver",
+          {
+              "alias": {
+                "@src": "./src",
+                "@assets": "./src/assets",
+                "@commons": "./src/commons",
+                "@configs": "./src/configs",
+                "@constants": "./src/constants",
+                "@modules": "./src/modules",
+                "@tools": "./src/tools",
+                "@utils": "./src/utils",
+                "@api": "./src/api",
+                "@charts": "./src/charts"
+              }
+          }
+      ]
+    ]
+  }

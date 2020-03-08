@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": false,
+      "baseUrl": "./",
+      "paths": {
+        "@src/*": ["./src/*"],
+        "@assets/*": ["./src/assets/*"],
+        "@commons/*": ["./src/commons/*"],
+        "@configs/*": ["./src/configs/*"],
+        "@constants/*": ["./src/constants/*"],
+        "@modules/*": ["./src/modules/*"],
+        "@tools/*": ["./src/tools/*"],
+        "@utils/*": ["./src/utils/*"],
+        "@api/*": ["./src/api/*"],
+        "@components/*": ["./src/components/*"],
+  
+        "@commons": ["./src/commons/index"],
+        "@configs": ["./src/configs/index"],
+        "@constants": ["./src/constants/index"],
+        "@utils": ["./src/utils/index"],
+        "@api": ["./src/api/index"],
+        "@components": ["./src/components/index"]
+      }
+    },
+    "exclude": ["node_modules", "dist"]
+  }
+  
