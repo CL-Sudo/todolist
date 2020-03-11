@@ -8,7 +8,7 @@ class TodoListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      taskList: {}
+      taskList: []
     };
   }
 
@@ -32,7 +32,7 @@ class TodoListContainer extends Component {
     return (
       <div>
         <Row align="middle" justify="center">
-          <Col span={11}>
+          <Col span={15}>
             <TodoListComponent
               taskList={taskList}
               GetTaskList={this.GetTaskList}
@@ -40,7 +40,7 @@ class TodoListContainer extends Component {
           </Col>
         </Row>
         <Row align="middle" justify="center">
-          <Col span={11}>
+          <Col span={12}>
             <TodoInputComponent GetTaskList={this.GetTaskList} />
           </Col>
         </Row>
