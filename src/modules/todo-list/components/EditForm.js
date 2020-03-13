@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input } from 'antd';
 
 const EditForm = ({ editingValue, setEditingValue }) => {
@@ -62,6 +62,7 @@ const EditForm = ({ editingValue, setEditingValue }) => {
             type="text"
             value={editingValue.title}
             onChange={handleChange}
+            size="40"
           />
         </div>
         <div>
@@ -74,6 +75,7 @@ const EditForm = ({ editingValue, setEditingValue }) => {
             type="text"
             value={editingValue.description}
             onChange={handleChange}
+            size="40"
           />
         </div>
       </form>

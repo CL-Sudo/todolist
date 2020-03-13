@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal } from 'antd';
+import { Button, Modal, message } from 'antd';
 import { EditForm } from './EditForm';
 import { updateTask } from '../../../api';
 
@@ -24,7 +24,7 @@ const EditInModal = ({
       const { title, description } = editingValue;
       await updateTask({ title, description, itemId });
       await GetTaskList();
-      console.log('Update Task Successfully');
+      message.success('Update Successfully');
       setIsEditting(false);
     } catch (e) {
       console.log('handleOnSubmit:', e);

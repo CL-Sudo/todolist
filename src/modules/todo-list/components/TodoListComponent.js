@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Button } from 'antd';
+import { Table, Button, Popconfirm, message } from 'antd';
 import _ from 'lodash';
 import { deleteTask, updateStatus } from '../../../api';
 import { EditInModal } from './EditInModal';
@@ -32,6 +32,7 @@ const TodoListComponent = ({ taskList, GetTaskList }) => {
       console.log('isCompleted: ', isCompleted);
       await updateStatus({ isCompleted, id });
       await GetTaskList();
+      message.success('Update Successfully');
       console.log('Update Status Successfully');
     } catch (e) {
       console.log('Error from handleAction: ', e);
@@ -71,9 +72,16 @@ const TodoListComponent = ({ taskList, GetTaskList }) => {
       title: 'Delete',
       dataIndex: 'id',
       render: id => (
-        <Button key={id} type="danger" onClick={() => handleOnDelete(id)}>
-          Delete
-        </Button>
+        <Popconfirm
+          title="Do you wish to delete this task?"
+          onConfirm={() => handleOnDelete(id)}
+          okText="Yes"
+          cancelText="No"
+        >
+          <Button key={id} type="danger">
+            Delete
+          </Button>
+        </Popconfirm>
       )
     },
     {

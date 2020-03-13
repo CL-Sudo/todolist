@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import Error from '../../../constants/ErrorMessage';
 import { validationSchema } from '../../../constants/validationSchema';
 import { createTask } from '../../../api';
+import { message } from 'antd';
 
 const TodoInputComponent = ({ GetTaskList }) => {
   return (
@@ -16,6 +17,7 @@ const TodoInputComponent = ({ GetTaskList }) => {
           await GetTaskList();
           resetForm();
           setSubmitting(false);
+          message.success('Task was added successfully!');
           console.log('Create Task Successfully');
         } catch (e) {
           console.log('onSubmit:', e);
